@@ -1,7 +1,8 @@
 $(document).ready(function() {
+
+// Parallax Images effect
   let controller = new ScrollMagic.Controller();
 
-    
   let timeline = new TimelineMax();
   timeline
   .to('#sixth', 6, {
@@ -31,7 +32,8 @@ $(document).ready(function() {
 }, '-=6')
 
 
-  let scene = new ScrollMagic.Scene({
+
+  new ScrollMagic.Scene({
     triggerElement: 'header',
     duration: '180%', 
     triggerHook: 0,
@@ -40,17 +42,19 @@ $(document).ready(function() {
   .setTween(timeline)
   .setPin('header')
   .addTo(controller)
-  .addIndicators()
 
+// Grid section images fadeOut effect
   document.querySelectorAll('.grid-image').forEach((image, index) => {
     let fadeInTimeline = new TimelineMax();
-    let percentageMove = (index + 1) * 25;
+    let percentageMove;
 
-    if(percentageMove <= 25 || percentageMove === 75){
+    if(index === 0){
         percentageMove = 50;
-    } else if ( percentageMove === 50){
+    } else if ( index === 1){
+        percentageMove = 75;
+    } else if ( index === 2) {
         percentageMove = 100;
-    } else {
+    } else if (index === 3){
         percentageMove = 25;
     }
 
@@ -68,6 +72,22 @@ $(document).ready(function() {
         .setTween(fadeInTimeline)
         .addTo(controller)
         .addIndicators()
+
 });
+
+
+// Navigation bar sticky effect
+let navigationBar = new ScrollMagic.Controller();
+
+let stickyNavScene = new ScrollMagic.Scene({
+    triggerElement: ".background",
+    triggerHook: 0,
+
+})
+.setClassToggle(".navigation", "sticky")
+.addTo(navigationBar)
+.addIndicators()
+
+
 });
 

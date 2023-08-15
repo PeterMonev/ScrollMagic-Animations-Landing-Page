@@ -28,12 +28,37 @@ body, html {
 }
 
 .section-header {
-  max-height: 10vh;
+  max-height: 100vh;
 }
 
 header {
   max-height: 100vh;
   width: 100%;
+}
+header .navigation {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: black;
+  transition: background-color 0.5s;
+  z-index: 1000;
+}
+header .navigation ul {
+  display: flex;
+  justify-content: space-around;
+}
+header .navigation ul li a {
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+header .navigation ul li a:hover {
+  color: green;
+}
+header .navigation.sticky {
+  background-color: transparent;
 }
 header .container {
   width: 100%;
@@ -84,7 +109,7 @@ header .container .images .blur {
 
 .section {
   background-color: black;
-  height: 100vh;
+  height: auto;
 }
 
 .section-grid-images {
@@ -93,9 +118,9 @@ header .container .images .blur {
   justify-content: center;
   flex-wrap: nowrap;
   gap: 40px;
-  padding: 20px;
-  height: 50vh;
-  z-index: 2;
+  padding: 50px 10px;
+  height: auto;
+  z-index: -1;
   background-color: #030000;
 }
 .section-grid-images .grid-image {
@@ -107,4 +132,11 @@ header .container .images .blur {
 .section-grid-images .grid-image img {
   width: 100%;
   display: block;
+  z-index: -1;
+}
+
+.section-text {
+  height: 100vh;
+  width: 100%;
+  background-color: salmon;
 }/*# sourceMappingURL=index.css.map */
