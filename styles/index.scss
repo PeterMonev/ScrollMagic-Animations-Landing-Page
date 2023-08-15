@@ -152,14 +152,72 @@ header{
             width: 100%;
             display: block;
             z-index: -1;
+         
         }
     }
     
 
 }
 
-.section-text {
+
+
+.typewriter-section {
     height: 100vh;
+    background-color: black;
+    display: grid;
+    place-items: center;
+
+    .typewriter-h1{
+        font-size: 32px;
+        color: white;
+        margin-top: 20px;
+    }
+
+    .typewrite-div {
+        width: 50ch;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid goldenrod;
+        font-family: monospace;
+        font-size: 20px;
+        color: white;
+        word-wrap: break-word;
+        margin-bottom: 40%;
+        animation: none; 
+   
+      }
+    
+      .typewrite-div p {
+        display: none;
+      }
+
+      .typewrite-div.animate-typewriter {
+        animation: typing 5s steps(50), blink .5s step-end infinite alternate;
+        display: inline-block;
+
+        p {
+            display: block;
+        }
+    }
+      
+  }
+  
+
+  @keyframes typing {
+    from {
+      width: 0
+    }
+ 
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
+
+  .scroll-triggered {
     width: 100%;
+    height: 100vh;
     background-color: salmon;
-}
+  }

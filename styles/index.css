@@ -135,8 +135,52 @@ header .container .images .blur {
   z-index: -1;
 }
 
-.section-text {
+.typewriter-section {
   height: 100vh;
+  background-color: black;
+  display: grid;
+  place-items: center;
+}
+.typewriter-section .typewriter-h1 {
+  font-size: 32px;
+  color: white;
+  margin-top: 20px;
+}
+.typewriter-section .typewrite-div {
+  width: 50ch;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid goldenrod;
+  font-family: monospace;
+  font-size: 20px;
+  color: white;
+  word-wrap: break-word;
+  margin-bottom: 40%;
+  animation: none;
+}
+.typewriter-section .typewrite-div p {
+  display: none;
+}
+.typewriter-section .typewrite-div.animate-typewriter {
+  animation: typing 5s steps(50), blink 0.5s step-end infinite alternate;
+  display: inline-block;
+}
+.typewriter-section .typewrite-div.animate-typewriter p {
+  display: block;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+.scroll-triggered {
   width: 100%;
+  height: 100vh;
   background-color: salmon;
 }/*# sourceMappingURL=index.css.map */

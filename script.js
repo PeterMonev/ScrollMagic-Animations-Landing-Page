@@ -69,7 +69,6 @@ $(document).ready(function() {
     })
         .setTween(fadeInTimeline)
         .addTo(controller)
-        .addIndicators()
 
 });
 
@@ -77,14 +76,27 @@ $(document).ready(function() {
 // Navigation bar sticky effect
 let navigationBar = new ScrollMagic.Controller();
 
-let stickyNavScene = new ScrollMagic.Scene({
+ new ScrollMagic.Scene({
     triggerElement: ".title",
     triggerHook: 0,
 
 })
 .setClassToggle(".navigation", "sticky")
 .addTo(navigationBar)
+
+
+// Typewriter
+let typeWriter = new ScrollMagic.Controller();
+
+new ScrollMagic.Scene({
+    triggerElement: ".typewriter-section",
+    triggerHook: 0.5,  
+
+})
+.setClassToggle('.typewrite-div', 'animate-typewriter')
+.addTo(typeWriter)
 .addIndicators()
+
 
 
 });
