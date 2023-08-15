@@ -28,10 +28,8 @@ $(document).ready(function() {
     top: '0%'
 }, '-=6')
 .to('.title', 6, {
-    y: -600,
+    y: -1200,
 }, '-=6')
-
-
 
   new ScrollMagic.Scene({
     triggerElement: 'header',
@@ -80,7 +78,7 @@ $(document).ready(function() {
 let navigationBar = new ScrollMagic.Controller();
 
 let stickyNavScene = new ScrollMagic.Scene({
-    triggerElement: ".background",
+    triggerElement: ".title",
     triggerHook: 0,
 
 })
