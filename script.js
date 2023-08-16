@@ -6,23 +6,23 @@ $(document).ready(function() {
   const timeline = new TimelineMax();
   timeline
   .to('#sixth', 6, {
-    y: -800
+    y: -1000
 })
 .to('#fifth', 6, {
-    y: -800
+    y: -700
 }, '-=6')
 .to('#forth', 6, {
-    y: -550,
+    y: -800,
 }, '-=6')
 .to('#third', 6, {
-    y: -550,
+    y: -500,
    
 }, '-=6')
 .to('#second', 6, {
     y: -500
 }, '-=6')
 .to('#first', 6, {
-    y: -500
+    y: -600
 }, '-=6')
 .to('.blur', 6, {
     top: '0%'
@@ -169,6 +169,25 @@ new ScrollMagic.Scene({
     $(".cube").css("transform", `rotateX(${rotation}deg) rotateY(${rotation}deg)`);
 })
 .addTo(controller);
+
+// Rotate Button function
+
+let isRotating = false 
+
+$('.rotateCube').on('click', function() {
+    if(!isRotating){
+        isRotating = true;
+        TweenMax.to('.cube', 6,{
+            rotationY: "+=360", 
+            rotationX: "+=360", 
+            repeat: -1, 
+            ease: Linear.easeNone 
+        });
+    } else {
+        isRotating = false;
+        TweenMax.killTweensOf(".cube");
+    }
+})
 
 });
 
