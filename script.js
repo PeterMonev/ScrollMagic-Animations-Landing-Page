@@ -155,5 +155,20 @@ timeLine.staggerFrom(".div-triggered", 1.5, {
   .setTween(timeLine)
   .addTo(scrollTrigger);
 
+// 3D cube images
+
+let rotation = 0;
+
+new ScrollMagic.Scene({
+    triggerElement: ".cube-section",
+    duration: 1000, 
+    triggerHook: 0.5,
+})
+.on("progress", function (event) {
+    rotation = 360 * event.progress;
+    $(".cube").css("transform", `rotateX(${rotation}deg) rotateY(${rotation}deg)`);
+})
+.addTo(controller);
+
 });
 
